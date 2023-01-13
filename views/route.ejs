@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cabs</title>
+  <style>
+   table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #dddddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+    .add-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-button:hover {
+    background-color: #3e8e41; /* Darker Green */
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 12px 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Route</h1>
+
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Route ID</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% routes.forEach(function(route) { %>
+        <tr>
+            <td><%= route.route_id %></td>
+            <td><%= route.route_start %></td>
+            <td><%= route.route_end %></td>
+            <td>
+                <a href="/delete-route/<%= route.route_id %>" class="delete-button">Delete</a>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+<br>
+<a href="/add-route" class="add-button">Add Route</a>
+
+</body>
+</html>

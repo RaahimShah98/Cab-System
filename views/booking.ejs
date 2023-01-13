@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cabs</title>
+  <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #dddddd;
+    }
+    form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Removing underline from anchor tag */
+
+}
+
+.delete-button:hover {
+    background-color: #ff3333; /* Darker Red */
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Book a Cab</h1>
+
+<form action="/cars/book" method="post">
+    <label for="cab_id">Cab ID:</label>
+    <input type="number" id="cab_id" name="cab_id" required>
+
+    <label for="cust_name">Customer Name:</label>
+    <input type="text" id="cust_name" name="cust_name" required>
+
+    <label for="pickup_location">Pickup Location:</label>
+    <input type="text" id="pickup_location" name="pickup_location" required>
+
+    <label for="dropoff_location">Drop-off Location:</label>
+    <input type="text" id="dropoff_location" name="dropoff_location" required>
+
+    <input type="submit" value="Book Cab">
+</form>
+
+</body>
+</html>

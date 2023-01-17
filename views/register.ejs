@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Register</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+
+      .form-container {
+        margin: 0 auto;
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      label {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .login-link {
+        text-align: center;
+      }
+
+      .login-link a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          required
+        />
+
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+    <div class="login-link">
+      <p>Already have an account? <a href="/users/login">Login here</a></p>
+    </div>
+  </body>
+</html>

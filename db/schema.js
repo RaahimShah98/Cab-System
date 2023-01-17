@@ -8,7 +8,7 @@ CREATE TABLE Users (
     CHECK (role IN ('admin', 'customer'))
   );
   
-`
+`;
 const CREATE_TABLE_TRIPS = `
 CREATE TABLE Trips (
     id INTEGER PRIMARY KEY IDENTITY(1,1),
@@ -19,10 +19,12 @@ CREATE TABLE Trips (
     start_location TEXT NOT NULL,
     end_location TEXT NOT NULL,
     price REAL NOT NULL,
+    status VARCHAR(255) NOT NULL DEFAULT 'ongoing',
     FOREIGN KEY (cab_id) REFERENCES Cabs(id),
     FOREIGN KEY (customer_id) REFERENCES Users(id)
+    CHECK (status IN ('completed', 'cancelled', 'ongoing'))
   );
-`
+`;
 
 const CREATE_TABLE_CABS = `
 CREATE TABLE Cabs (
@@ -32,14 +34,12 @@ CREATE TABLE Cabs (
     model TEXT NOT NULL,
     capacity INTEGER NOT NULL,
     FOREIGN KEY (driver_id) REFERENCES Users(id)
+    availability boolean NOT NULL DEFAULT true
   ); 
-`
-
-
-
+`;
 
 module.exports = {
-    CREATE_TABLE_CABS,
-    CREATE_TABLE_TRIPS,
-    CREATE_TABLE_USERS
-}
+  CREATE_TABLE_CABS,
+  CREATE_TABLE_TRIPS,
+  CREATE_TABLE_USERS,
+};
